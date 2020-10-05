@@ -1,0 +1,15 @@
+.App {
+	display: flex;
+	justify-content: space-between;
+	flex: 1 0 auto;
+	flex-wrap: wrap;
+}
+
+p.main-title {
+	font-family: 'Raleway', sans-serif;
+	font-size: 2rem;
+}
+
+.header {
+	margin: .5rem;
+}
