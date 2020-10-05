@@ -95,7 +95,7 @@ class App extends React.Component<{}, { stack: string[]; currentFile: string; de
 		}
 		return (
 			<div className="App">
-				<p className="main-title">Skyview Report</p>
+				<p className="main-title">KikSwitch Report</p>
 				<div>
 					<p className="main-credit">Andrew Porter</p>
 				</div>
