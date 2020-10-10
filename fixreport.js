@@ -1,7 +1,7 @@
 var fs = require('fs');
 console.log('asdf');
 
-let file_contents = fs.readFileSync('./index.html', 'utf8')
+let file_contents = fs.readFileSync('./docs/index.html', 'utf8')
 
 
 let notsame = false;
@@ -13,4 +13,4 @@ do {
 }
 while (notsame);
 
-fs.writeFileSync('./index.html', file_contents, 'utf8')
+fs.writeFileSync('./docs/index.html', file_contents, 'utf8')
