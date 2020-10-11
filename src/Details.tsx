@@ -5,48 +5,10 @@ import { NodeProject, ImageProject, NodeProperties } from './interfaces';
 import { NodeTypeColors, NodeTypes } from './nodestuff';
 import Game from './Game';
 
-class Details extends React.Component<
-	{
-		fileName: string;
-		projects: NodeProject[];
-		onClick: Function;
-		project: ImageProject;
-		onProjectItemSelect: Function;
-	},
-	{ currentPart?: NodeProject }
-> {
+export default class Details extends React.Component<{ currentPart: NodeProject; }, any> {
 	constructor(props: any) {
 		super(props);
 		this.state = {};
-	}
-	generateName(name: string) {
-		let { projects } = this.props;
-		let img_width = 1680;
-		let img_height = 936;
-		return projects.map((v) => {
-			return (
-				<div
-					onMouseOver={() => {
-						this.setState({
-							currentPart: v
-						});
-					}}
-					onClick={() => {
-						this.props.onProjectItemSelect(v.id);
-					}}
-					className="area-map-item"
-					style={{
-						position: 'absolute',
-						zIndex: 10,
-						left: `${v.bounds.x / img_width * 100}%`,
-						width: `${(v.bounds.X - v.bounds.x) / img_width * 100}%`,
-						top: `${v.bounds.y / img_height * 100}%`,
-						height: `${(v.bounds.Y - v.bounds.y) / img_height * 100}%`
-					}}
-					key={v.id}
-				/>
-			);
-		});
 	}
 	getExtraInformation(currentPart: NodeProject | undefined) {
 		if (currentPart) {
@@ -65,11 +27,8 @@ class Details extends React.Component<
 	}
 	getDataChainDescription() {
 		return (
-			<div className="description">
-				Data chains turn into code, that excutes its defined functionality. This is as close to the code as Red
-				Quick Builder gets.
-			</div>
-		);
+			<div className="description">Data chains turn into code, that excutes its defined functionality. This is as close to the code as Red Quick Builder gets.</div>
+		)
 	}
 	getAgentAccessDescription() {
 		return (
@@ -130,57 +89,29 @@ class Details extends React.Component<
 		}
 
 		return [
-			<h2>Validation</h2>,
-			validationSummary,
-			<h2>Permission</h2>,
+			<h2 key='permission'>Permission</h2>,
 			permissionSummary,
-			<h2>Execution</h2>,
+			<h2 key='validation'>Validation</h2>,
+			validationSummary,
+			<h2 key='execution'>Execution</h2>,
 			executionSumary
 		];
 	}
 	render() {
-		let { project, fileName, projects } = this.props;
-		let nodeProject: NodeProject = projects[0];
-		let grouped = groupBy(projects, (x: NodeProject) => (x.properties ? x.properties.nodeType : null));
-		let mapname = `image-map`;
-		let { currentPart } = this.state;
+		let { currentPart } = this.props;
 		return (
 			<div className="details">
 				<div className="detail-header">
-					<div className="header">
-						<button
-							onClick={() => {
-								if (this.props.onClick) {
-									this.props.onClick();
-								}
-							}}
-						>
-							Back
-						</button>
-					</div>
-					<div className="detail-information">
-						<h1
-							className="text"
-							dangerouslySetInnerHTML={{ __html: currentPart ? currentPart.properties.text : '' }}
-						/>
-						<h2 className="text">NodeType: {currentPart ? currentPart.properties.nodeType : ''}</h2>
-					</div>
-
 					<div className="detail-information">{this.getExtraInformation(currentPart)}</div>
-				</div>
-				<div className="detail-image" style={{ position: 'relative' }}>
-					<img src={`img/${fileName}`} alt="" useMap={`#${mapname}`} />
-					{this.generateName(mapname)}
 				</div>
 			</div>
 		);
 	}
 }
 function groupBy(xs: any[], key: Function) {
-	return xs.reduce(function(rv, x) {
+	return xs.reduce(function (rv, x) {
 		(rv[key(x)] = rv[key(x)] || []).push(x);
 		return rv;
 	}, {});
 }
 
-export default Details;

@@ -1,0 +1,33 @@
+declare const styles: {
+  readonly "active": string;
+  readonly "btn": string;
+  readonly "content-header": string;
+  readonly "header": string;
+  readonly "info": string;
+  readonly "input-group-btn": string;
+  readonly "left-side": string;
+  readonly "logo": string;
+  readonly "main-header": string;
+  readonly "main-sidebar": string;
+  readonly "nav": string;
+  readonly "navbar": string;
+  readonly "navbar-brand": string;
+  readonly "navbar-custom-menu": string;
+  readonly "navbar-nav": string;
+  readonly "navbar-right": string;
+  readonly "navbar-toggle": string;
+  readonly "open": string;
+  readonly "sidebar": string;
+  readonly "sidebar-collapse": string;
+  readonly "sidebar-form": string;
+  readonly "sidebar-menu": string;
+  readonly "sidebar-mini": string;
+  readonly "sidebar-toggle": string;
+  readonly "skin-black-light": string;
+  readonly "treeview-menu": string;
+  readonly "user-header": string;
+  readonly "user-panel": string;
+  readonly "wrapper": string;
+};
+export = styles;
+

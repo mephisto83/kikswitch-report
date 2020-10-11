@@ -96,7 +96,7 @@ class Game extends React.Component<{
 		);
 	}
 }
-function groupBy(xs: any[], key: Function) {
+export function groupBy(xs: any[], key: Function) {
 	return xs.reduce(function(rv, x) {
 		(rv[key(x)] = rv[key(x)] || []).push(x);
 		return rv;

@@ -1,0 +1,34 @@
+declare const styles: {
+  readonly "active": string;
+  readonly "badge": string;
+  readonly "btn-adn": string;
+  readonly "btn-bitbucket": string;
+  readonly "btn-dropbox": string;
+  readonly "btn-facebook": string;
+  readonly "btn-flickr": string;
+  readonly "btn-foursquare": string;
+  readonly "btn-github": string;
+  readonly "btn-google": string;
+  readonly "btn-instagram": string;
+  readonly "btn-lg": string;
+  readonly "btn-linkedin": string;
+  readonly "btn-microsoft": string;
+  readonly "btn-openid": string;
+  readonly "btn-pinterest": string;
+  readonly "btn-reddit": string;
+  readonly "btn-sm": string;
+  readonly "btn-social": string;
+  readonly "btn-social-icon": string;
+  readonly "btn-soundcloud": string;
+  readonly "btn-tumblr": string;
+  readonly "btn-twitter": string;
+  readonly "btn-vimeo": string;
+  readonly "btn-vk": string;
+  readonly "btn-xs": string;
+  readonly "btn-yahoo": string;
+  readonly "dropdown-toggle": string;
+  readonly "focus": string;
+  readonly "open": string;
+};
+export = styles;
+

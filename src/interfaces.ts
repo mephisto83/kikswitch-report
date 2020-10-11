@@ -1,5 +1,3 @@
-import { AnyARecord } from 'dns';
-
 export interface Bounds {
 	x: number;
 	X: number;
@@ -22,15 +20,13 @@ export interface NodeProperties {
 	uiUser: string;
 	hasLogicalNieces: boolean;
 	hasLogicalChildren: boolean;
-	ExecutionSummary: any;
-	ValidationSummary: any;
-	PermissionSummary: any;
 	logicalChildrenTypes: any[];
+	ExecutionSummary: any;
+	PermissionSummary: any;
+	ValidationSummary: any;
 }
 
 export interface NodeProject {
-	bounds: Bounds;
-	id: string;
 	properties: NodeProperties;
 }
 
